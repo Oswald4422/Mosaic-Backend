@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5174', // Updated Vite port
+  origin: ['http://localhost:5174', 'https://mosaic-frontend-zr9e.onrender.com'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
