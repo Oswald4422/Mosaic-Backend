@@ -5,6 +5,14 @@ require('dotenv').config();
 
 const app = express();
 
+// Enable CORS first, before any other middleware
+app.use(cors({
+  origin: true, // Allow all origins temporarily for testing
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 // Connect to MongoDB
 connectDB();
 
@@ -31,12 +39,6 @@ app.use((req, res, next) => {
 });
 
 // Middleware
-app.use(cors({
-  origin: ['http://localhost:5174', 'https://mosaic-frontend-zr9e.onrender.com'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
 app.use(express.json());
 
 // Routes
