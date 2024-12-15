@@ -19,10 +19,12 @@ connectDB();
 // Middleware
 app.use(cors({
   origin: [
-    'https://mosaic-frontend-zrqe.onrender.com', // Frontend Render URL
-    'https://mosaic-backend-t33r.onrender.com'  // Backend Render URL
+    'https://mosaic-frontend-zrqe.onrender.com',
+    'http://mosaic-backend-t33r.onrender.com',
   ],
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 
