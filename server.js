@@ -16,6 +16,17 @@ app.use(cors({
 // Connect to MongoDB
 connectDB();
 
+// Middleware
+app.use(cors({
+  origin: [
+    'https://mosaic-frontend-zrqe.onrender.com', // Frontend Render URL
+    'https://mosaic-backend-t33r.onrender.com'  // Backend Render URL
+  ],
+  credentials: true
+}));
+app.use(express.json());
+
+
 // Request logging middleware
 app.use((req, res, next) => {
   const start = Date.now();
@@ -38,8 +49,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Middleware
-app.use(express.json());
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
