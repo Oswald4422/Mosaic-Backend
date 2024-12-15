@@ -22,9 +22,9 @@ app.use(cors({
     'https://mosaic-frontend-zrqe.onrender.com',
     'http://mosaic-backend-t33r.onrender.com',
   ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  //credentials: true,
+  //methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  //allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 
